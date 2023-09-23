@@ -1,7 +1,7 @@
-package com.example.luan_food.controller;
+package com.example.LuanFood.controller;
 
-import com.example.luan_food.entity.FoodEntity;
-import com.example.luan_food.repository.FoodRepository;
+import com.example.LuanFood.entity.FoodEntity;
+import com.example.LuanFood.repository.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

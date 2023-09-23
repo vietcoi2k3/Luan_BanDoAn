@@ -1,4 +1,4 @@
-package com.example.luan_food.entity;
+package com.example.LuanFood.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;

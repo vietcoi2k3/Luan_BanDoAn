@@ -1,6 +1,6 @@
-package com.example.luan_food.repository;
+package com.example.LuanFood.repository;
 
-import com.example.luan_food.entity.FoodEntity;
+import com.example.LuanFood.entity.FoodEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
