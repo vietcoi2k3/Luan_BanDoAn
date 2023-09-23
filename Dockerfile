@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/LuanFood-0.0.1-SNAPSHOT.jar LuanFood.jar
+COPY --from=build /target/luan_food-0.0.1-SNAPSHOT.jar luan_food.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","LuanFood.jar"]
+ENTRYPOINT ["java","-jar","luan_food.jar"]
