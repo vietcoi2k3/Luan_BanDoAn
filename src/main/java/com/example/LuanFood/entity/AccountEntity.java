@@ -1,5 +1,6 @@
 package com.example.LuanFood.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,6 +17,7 @@ public class AccountEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Integer id;
     private String username;
     private String password;
@@ -24,5 +26,6 @@ public class AccountEntity {
 
     @OneToMany(mappedBy = "accountEntity")
     @JsonManagedReference(value = "account-order")
+    @JsonIgnore
     private List<OrderEntity> orderEntityList;
 }

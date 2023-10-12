@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 public class OrderDetailEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Integer id;
     private int quantity;
     @Column(name = "foodId")

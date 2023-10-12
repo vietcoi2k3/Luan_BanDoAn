@@ -1,5 +1,6 @@
 package com.example.LuanFood.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,5 +23,6 @@ public class TypeFooodEntity {
 
     @OneToMany(mappedBy = "typeFoodEntity")
     @JsonManagedReference(value = "food-type")
+    @JsonIgnore
     private List<FoodEntity> foodEntityList;
 }

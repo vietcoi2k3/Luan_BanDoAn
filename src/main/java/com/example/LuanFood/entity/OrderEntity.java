@@ -1,6 +1,7 @@
 package com.example.LuanFood.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,5 +32,6 @@ public class OrderEntity {
 
     @OneToMany(mappedBy = "orderEntity")
     @JsonManagedReference(value = "")
+    @JsonIgnore
     private List<OrderDetailEntity> orderDetailEntities;
 }
