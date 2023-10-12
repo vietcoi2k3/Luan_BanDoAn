@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderService {
 
-    public OrderEntity addBill(OrderRequestDTO orderRequestDTO){
-        
-    }
+//    public OrderEntity addBill(OrderRequestDTO orderRequestDTO){
+//
+//    }
 }
