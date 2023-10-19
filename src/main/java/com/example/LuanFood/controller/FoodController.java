@@ -3,8 +3,10 @@ package com.example.LuanFood.controller;
 import com.example.LuanFood.entity.FoodEntity;
 import com.example.LuanFood.repository.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,5 +21,10 @@ public class FoodController {
     @RequestMapping(value = "get-all-food",method = RequestMethod.GET)
     public List<FoodEntity> getAllFood(){
         return foodRepository.findAll();
+    }
+
+    @RequestMapping(value = "find-food",method = RequestMethod.POST)
+    public ResponseEntity findFoodWithId(@RequestParam Integer id){
+        return ResponseEntity.ok(foodRepository.findById(id));
     }
 }

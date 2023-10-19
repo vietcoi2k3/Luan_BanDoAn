@@ -31,4 +31,14 @@ public class AccountController {
     public ResponseEntity getUserInfo(@RequestParam Integer accountId){
         return ResponseEntity.ok(accountRepository.findById(accountId));
     }
+
+    @Operation(summary = "phải truyền id,fullname,adress,std, không cần truyền những thứ còn lại")
+    @RequestMapping(value = "update-user-info",method = RequestMethod.PUT)
+    public ResponseEntity updateUserInfo(@RequestBody AccountEntity account){
+        AccountEntity accountEntity = accountRepository.findById(account.getId()).get();
+        accountEntity.setAdress(account.getAdress());
+        accountEntity.setFullname(account.getFullname());
+        accountEntity.setStd(account.getStd());
+        return ResponseEntity.ok(accountRepository.save(accountEntity));
+    }
 }

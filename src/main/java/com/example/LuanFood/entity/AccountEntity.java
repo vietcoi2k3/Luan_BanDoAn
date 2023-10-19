@@ -23,6 +23,7 @@ public class AccountEntity {
     private String password;
     private String fullname;
     private String adress;
+    private String std;
 
     @OneToMany(mappedBy = "accountEntity")
     @JsonManagedReference(value = "account-order")
