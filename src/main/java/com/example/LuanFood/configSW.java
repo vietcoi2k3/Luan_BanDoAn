@@ -21,7 +21,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 ),
                 @Server(
                         description = "PROD EVM",
-                        url = "https://thangdev.online"
+                        url = "https://api-luan.thangdev.online"
                 )
         }
 )
