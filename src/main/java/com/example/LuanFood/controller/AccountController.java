@@ -19,7 +19,12 @@ public class AccountController {
     private AccountRepository accountRepository;
     @RequestMapping(value = "register",method = RequestMethod.POST)
     public ResponseEntity register(@RequestBody AccountEntity accountEntity){
-        return ResponseEntity.ok(accountService.register(accountEntity));
+        try {
+            return ResponseEntity.ok(accountService.register(accountEntity));
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+
     }
 
     @Operation(summary = "chỉ cần truyền tài khoản mật khẩu")

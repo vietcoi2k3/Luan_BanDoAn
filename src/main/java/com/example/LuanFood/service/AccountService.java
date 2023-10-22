@@ -12,7 +12,7 @@ public class AccountService {
     private AccountRepository accountRepository;
     public AccountEntity register(AccountEntity accountEntity){
         if (!accountRepository.findByUsername(accountEntity.getUsername()).isEmpty()){
-            return null;
+            throw new RuntimeException("Tài khoản đã tồn tại");
         }
         return accountRepository.save(accountEntity);
     }
