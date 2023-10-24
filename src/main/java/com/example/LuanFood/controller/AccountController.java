@@ -20,7 +20,8 @@ public class AccountController {
     @RequestMapping(value = "register",method = RequestMethod.POST)
     public ResponseEntity register(@RequestBody AccountEntity accountEntity){
         try {
-            return ResponseEntity.ok(accountService.register(accountEntity));
+            accountService.register(accountEntity);
+            return ResponseEntity.ok("đăng kí thành công");
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }

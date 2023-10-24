@@ -22,7 +22,7 @@ public class AccountEntity {
     private String username;
     private String password;
     private String fullname;
-    private String adress;
+    private String address;
     private String std;
 
     @OneToMany(mappedBy = "accountEntity")
