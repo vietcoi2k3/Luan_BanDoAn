@@ -43,7 +43,7 @@ public class AccountController {
     @RequestMapping(value = "update-user-info",method = RequestMethod.PUT)
     public ResponseEntity updateUserInfo(@RequestBody AccountEntity account){
         AccountEntity accountEntity = accountRepository.findById(account.getId()).get();
-        accountEntity.setAdress(account.getAdress());
+        accountEntity.setAddress(account.getAddress());
         accountEntity.setFullname(account.getFullname());
         accountEntity.setStd(account.getStd());
         return ResponseEntity.ok(accountRepository.save(accountEntity));
