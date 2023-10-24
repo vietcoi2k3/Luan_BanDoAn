@@ -1,5 +1,6 @@
 package com.example.LuanFood.controller;
 
+import com.example.LuanFood.entity.TypeFooodEntity;
 import com.example.LuanFood.repository.TypeFoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ public class TypeFoodController {
 
     @RequestMapping(value = "find-type",method = RequestMethod.POST)
     public ResponseEntity findTypeWithId(@RequestParam Integer id){
-        return ResponseEntity.ok(typeFoodRepository.findById(id));
+        TypeFooodEntity typeFooodEntity = typeFoodRepository.findById(id).get();
+        return ResponseEntity.ok(typeFooodEntity.getFoodEntityList());
     }
 }
