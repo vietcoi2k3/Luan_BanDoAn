@@ -17,11 +17,12 @@ public class AccountService {
         return accountRepository.save(accountEntity);
     }
 
-    public String login(String username,String password){
+    public AccountEntity login(String username,String password){
         AccountEntity accountEntity = accountRepository.findByUsername(username).get();
         if (accountEntity!=null&&accountEntity.getPassword().contains(password)){
-            return "Đăng nhập thành công";
+            accountEntity.setPassword("");
+            return accountEntity;
         }
-        return "tài khoản hoặc mật khẩu không đúng";
+        throw new RuntimeException("tài khoản mật khẩu không đúng");
     }
 }

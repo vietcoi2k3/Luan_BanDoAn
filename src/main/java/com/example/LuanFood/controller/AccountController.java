@@ -32,7 +32,11 @@ public class AccountController {
     @Operation(summary = "chỉ cần truyền tài khoản mật khẩu")
     @RequestMapping(value = "login",method = RequestMethod.POST)
     public ResponseEntity login(@RequestBody AccountEntity accountEntity){
-        return ResponseEntity.ok(accountService.login(accountEntity.getUsername(),accountEntity.getPassword()));
+        try {
+            return ResponseEntity.ok(accountService.login(accountEntity.getUsername(),accountEntity.getPassword()));
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @RequestMapping(value = "get-userinfo",method = RequestMethod.GET)
