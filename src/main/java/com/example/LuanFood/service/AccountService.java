@@ -19,7 +19,7 @@ public class AccountService {
 
     public AccountEntity login(String username,String password){
         AccountEntity accountEntity = accountRepository.findByUsername(username).get();
-        if (accountEntity!=null&&accountEntity.getPassword().contains(password)){
+        if (accountEntity!=null&&accountEntity.getPassword().equals(password)){
             accountEntity.setPassword("");
             return accountEntity;
         }
